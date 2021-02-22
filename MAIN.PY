@@ -27,9 +27,7 @@ class Menu:
        
         
       elif casteoNumero ==5 :
-        print("-----------------------DATOS INGRESADOS AL HTML ------------------------")
-     
-        print("------------------------------------------")
+ 
       elif casteoNumero == 6 :
         
         break
