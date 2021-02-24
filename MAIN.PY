@@ -20,6 +20,7 @@ class Menu:
       elif (casteoNumero == 2 ):
         Proceso().procesar(CargarDatos.cargar(documento))
         Proceso().ordenar(CargarDatos.cargar(documento))
+        Proceso().incluir()
       elif(casteoNumero == 3):
         print("opcion 3")
       elif (casteoNumero == 4):

@@ -42,5 +42,7 @@ class Lista:
   def recorrer (self): 
       aux = self.inicio
       return aux
-      
-
+  def recorrers (self): 
+      auxr = self.inicio
+      return auxr
+  
