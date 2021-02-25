@@ -20,7 +20,7 @@ class Menu:
       elif (casteoNumero == 2 ):
         Proceso().procesar(CargarDatos.cargar(documento))
         Proceso().ordenar(CargarDatos.cargar(documento))
-        Proceso().incluir()
+        Proceso().incluir(CargarDatos.cargar(documento))
       elif(casteoNumero == 3):
         print("opcion 3")
       elif (casteoNumero == 4):
@@ -37,5 +37,8 @@ class Menu:
 
 Menu.menus()
 
-
-
+"""
+cod = cod + int(dato)
+            d = cod-1
+            numeror = numeror+str(self.lista3.getNodo(d))+"*"
+"""

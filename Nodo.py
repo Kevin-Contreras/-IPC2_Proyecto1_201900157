@@ -4,6 +4,9 @@ class Nodo:
     self.__siguinte=None
   def elemento(self) :
     return self.__datos
+
+
+
 class Lista:
   inicio=None
   final=None
@@ -36,12 +39,19 @@ class Lista:
       while aux.siguinte != self.inicio:
         print(aux.elemento())
         aux = aux.siguinte
-      
       print(aux.elemento())
       
   def recorrer (self): 
       aux = self.inicio
       return aux
+  def getNodo(self,indice):
+    aus = self.inicio
+  
+    for nodo in range(int(indice)-1):
+      aus = aus.siguinte
+    return aus.elemento()
+
+
   def recorrers (self): 
       auxr = self.inicio
       return auxr
