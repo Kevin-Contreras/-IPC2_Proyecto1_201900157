@@ -1,5 +1,7 @@
 from CARGAR import *
 from PROCESAR import *
+from COLOCAR import *
+from DATOS import *
 class Menu:
 
   def menus():
@@ -18,9 +20,11 @@ class Menu:
         CargarDatos.cargar(documento)
         print("SE HA CARGADO EL ARCHIVO CON EXITO")
       elif (casteoNumero == 2 ):
-        Proceso().procesar(CargarDatos.cargar(documento))
-        Proceso().ordenar(CargarDatos.cargar(documento))
-        Proceso().incluir(CargarDatos.cargar(documento))
+       #Proceso().procesar(CargarDatos.cargar(documento))
+        Dato().verificar(CargarDatos.cargar(documento))
+        Colocar().ordenarMatriz(CargarDatos.cargar(documento))
+        #Proceso().ordenar(CargarDatos.cargar(documento))
+        #Proceso().incluir(CargarDatos.cargar(documento))
       elif(casteoNumero == 3):
         print("opcion 3")
       elif (casteoNumero == 4):

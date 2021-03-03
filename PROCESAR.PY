@@ -1,7 +1,6 @@
 from xml.dom import minidom
 from Nodo import *
 class Proceso():
- 
   lista= Lista()
   lista2 = Lista()
   lista3 = Lista()
@@ -44,7 +43,7 @@ class Proceso():
           break
       o = o.siguinte
       dato = dato+1      
-    print(self.lista3.mostrar())  
+   
   def incluir(self,archivo):
    
     doc = minidom.parse(archivo)
@@ -88,7 +87,7 @@ class Proceso():
     orden =sorted( set(asterisco))
     asterisco = orden
  
-    print(asterisco)
+ 
     x=0;
     m=0
     for item in items:
