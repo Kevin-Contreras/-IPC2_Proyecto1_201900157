@@ -1,6 +1,7 @@
 from xml.dom import minidom
 from Nodo import *
 class Colocar :
+  letras=""
   def ordenarMatriz(self,datow):
     n ="";
     h=0;
@@ -12,8 +13,6 @@ class Colocar :
     nombres = mini.getElementsByTagName("matriz")
     datos = mini.getElementsByTagName("dato")
     nombres2 = mini.getElementsByTagName("matriz")
-    
-      
     for nom in range(len(nombres)):
      n = n+nombres[nom].attributes["nombre"].value+","
      d = n[:-1]
@@ -33,6 +32,9 @@ class Colocar :
       h2=0
       i=0;
     letras = m[:-1].split(",")
+    return letras
+  
+    
 
     
     

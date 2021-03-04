@@ -1,10 +1,12 @@
 from xml.dom import minidom
 from Nodo import *
+from COLOCAR import *
 class Dato:
   lista = Lista()
   def verificar(self,archivo):
     mayork=""
     mayorz =""
+    
     datosMayoresy=""
     datosMayorx=""
     contadorParaX =0
@@ -13,9 +15,11 @@ class Dato:
     contador=0;
     mini = minidom.parse(archivo)
     nombres = mini.getElementsByTagName("matriz")
+    print(nombres[0])
     y = mini.getElementsByTagName("dato")
-    for xml in nombres:
-      for dato in xml.childNodes:
+    sinRepetir = Colocar().ordenarMatriz(archivo)
+    for sin in sinRepetir:
+      for dato in nombres[int(sin)].childNodes:
         if(str(dato).find("dato")!=-1):
           mayork=mayork+dato.attributes["y"].value+","
           mayorz=mayorz+dato.attributes["x"].value+","
@@ -35,7 +39,7 @@ class Dato:
           for dato in range(int(matriz)*int(splitx[contador])+int(matriz)):
             if(int(matriz)==contadorParaX):
               contadorParaXs=contadorParaXs+1
-              print(str(contadorParaXs) +" FD")
+          
             
             if(contadorParay==int(matriz)):
               contadorParay=0
@@ -47,6 +51,7 @@ class Dato:
               if(str(interna2).find("dato")!=-1):
                 if(str(interna2.toxml()).find("x=\""+str(contadorParaXs)+"\""+" y=\""+str(contadorParay)+"\"")!=-1):
                     print(interna2.firstChild.nodeValue)
+          print("---------------")
           contadorParaXs=0
           contadorParaX=0
           contadorParay=0
