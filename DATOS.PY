@@ -32,7 +32,7 @@ class Dato:
     
     for matriz in splity:
       if(int(nombres[contador].attributes["n"].value)*int(nombres[contador].attributes["m"].value)== int(matriz)*int(splitx[contador])):
-          for dato in range(int(matriz)*int(splitx[contador])):
+          for dato in range(int(matriz)*int(splitx[contador])+int(matriz)):
             if(int(matriz)==contadorParaX):
               contadorParaXs=contadorParaXs+1
               print(str(contadorParaXs) +" FD")
@@ -43,20 +43,14 @@ class Dato:
               contadorParaX=0
             contadorParay=contadorParay+1
             contadorParaX=contadorParaX+1
-           
-          
             for interna2 in nombres[contador].childNodes:
               if(str(interna2).find("dato")!=-1):
-                
                 if(str(interna2.toxml()).find("x=\""+str(contadorParaXs)+"\""+" y=\""+str(contadorParay)+"\"")!=-1):
                     print(interna2.firstChild.nodeValue)
           contadorParaXs=0
           contadorParaX=0
           contadorParay=0
-          
-          
-            
-          
+ 
       else:
         print("LA MATRIZ " + nombres[contador].attributes["nombre"].value+" ES INCORRECTA SUS DIMENSIONES NO COINCIDEN")
       contador=contador+1
