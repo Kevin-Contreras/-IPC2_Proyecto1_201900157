@@ -3,6 +3,11 @@ from Nodo import *
 from COLOCAR import *
 class Dato:
   lista = Lista()
+  lista2 = Lista()
+  listaY = Lista()
+  listaX = Lista()
+  listaContador = Lista()
+  listal = Lista()
   def verificar(self,archivo):
     mayork=""
     mayorz =""
@@ -13,9 +18,11 @@ class Dato:
     contadorParaXs =0
     contadorParay=0
     contador=0;
+    contadore=0
+    iterar=0
     mini = minidom.parse(archivo)
     nombres = mini.getElementsByTagName("matriz")
-    print(nombres[0])
+   
     y = mini.getElementsByTagName("dato")
     sinRepetir = Colocar().ordenarMatriz(archivo)
     for sin in sinRepetir:
@@ -36,6 +43,9 @@ class Dato:
     
     for matriz in splity:
       if(int(nombres[contador].attributes["n"].value)*int(nombres[contador].attributes["m"].value)== int(matriz)*int(splitx[contador])):
+          iterar=iterar+1
+          self.listaY.insertar(matriz)
+          self.listaX.insertar(splitx[contador])
           for dato in range(int(matriz)*int(splitx[contador])+int(matriz)):
             if(int(matriz)==contadorParaX):
               contadorParaXs=contadorParaXs+1
@@ -50,18 +60,32 @@ class Dato:
             for interna2 in nombres[contador].childNodes:
               if(str(interna2).find("dato")!=-1):
                 if(str(interna2.toxml()).find("x=\""+str(contadorParaXs)+"\""+" y=\""+str(contadorParay)+"\"")!=-1):
-                    print(interna2.firstChild.nodeValue)
-          print("---------------")
+                    
+                    self.lista.insertar(interna2.firstChild.nodeValue)
+                    contadore=contadore+1
+          
+          self.listaContador.insertar(contadore)
+          contadore=0
           contadorParaXs=0
           contadorParaX=0
           contadorParay=0
+          
  
       else:
         print("LA MATRIZ " + nombres[contador].attributes["nombre"].value+" ES INCORRECTA SUS DIMENSIONES NO COINCIDEN")
       contador=contador+1
 
-     
-         
+    self.listal.insertar(iterar)
+    
           
     
-    
+  def y(self):
+    return self.listaY
+  def x(self):
+    return self.listaX 
+  def contador(self):
+    return self.listaContador
+  def iterar (self):
+    return self.listal
+  def datos(self):
+    return self.lista
