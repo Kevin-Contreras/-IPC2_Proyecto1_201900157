@@ -7,6 +7,7 @@ class Colocar :
     h=0;
     h2=0
     po=0
+  
     contador=0
     m=""
     mini = minidom.parse(datow)

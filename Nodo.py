@@ -47,7 +47,11 @@ class Lista:
     aus = self.inicio
     for nodo in range(int(indice)-1):
       aus = aus.siguinte
+
     return aus.elemento()
+ 
+  
+    
 
 
   def recorrers (self): 
@@ -55,7 +59,7 @@ class Lista:
       return auxr
   def eliminar(self):
     if(self.getValor() == True):
-      print("esta vacio")
+     s=0
     elif self.inicio ==self.final:
       self.inicio=self.final=None
     else:
@@ -64,11 +68,4 @@ class Lista:
        aux=aux.siguinte
      aux.siguinte=self.inicio
      self.final=aux
-  def uno (self,indice):
-    aus = self.inicio
-    for nodo in range(int(indice)-1):
-      aus = aus.siguinte
-    d = aus.elemento()
-    d=1
-    return d
-
+  

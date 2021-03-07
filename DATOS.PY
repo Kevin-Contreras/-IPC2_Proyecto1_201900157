@@ -11,7 +11,6 @@ class Dato:
   def verificar(self,archivo):
     mayork=""
     mayorz =""
-    
     datosMayoresy=""
     datosMayorx=""
     contadorParaX =0
@@ -42,7 +41,7 @@ class Dato:
     datosMayorx=""
     
     for matriz in splity:
-      if(int(nombres[contador].attributes["n"].value)*int(nombres[contador].attributes["m"].value)== int(matriz)*int(splitx[contador])):
+      if(int(nombres[contador].attributes["n"].value)*int(nombres[contador].attributes["m"].value) == int(matriz)*int(splitx[contador])):
           iterar=iterar+1
           self.listaY.insertar(matriz)
           self.listaX.insertar(splitx[contador])
@@ -69,11 +68,11 @@ class Dato:
           contadorParaXs=0
           contadorParaX=0
           contadorParay=0
-          
+          contador=contador+1
  
       else:
         print("LA MATRIZ " + nombres[contador].attributes["nombre"].value+" ES INCORRECTA SUS DIMENSIONES NO COINCIDEN")
-      contador=contador+1
+        contador=contador+1
 
     self.listal.insertar(iterar)
     
@@ -89,3 +88,11 @@ class Dato:
     return self.listal
   def datos(self):
     return self.lista
+  def datosEliminar(self):
+    self.lista.eliminar()
+  def contadorEliminar(self):
+    self.listaContador.eliminar()
+  def iterarEliminar(self):
+    self.listal.eliminar()
+  def xeliminar(self):
+    self.listaX.eliminar()
