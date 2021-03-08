@@ -51,9 +51,6 @@ class Lista:
     return aus.elemento()
  
   
-    
-
-
   def recorrers (self): 
       auxr = self.inicio
       return auxr

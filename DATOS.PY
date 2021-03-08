@@ -8,6 +8,7 @@ class Dato:
   listaX = Lista()
   listaContador = Lista()
   listal = Lista()
+  sinRepetir = Colocar()
   def verificar(self,archivo):
     mayork=""
     mayorz =""
@@ -23,8 +24,8 @@ class Dato:
     nombres = mini.getElementsByTagName("matriz")
    
     y = mini.getElementsByTagName("dato")
-    sinRepetir = Colocar().ordenarMatriz(archivo)
-    for sin in sinRepetir:
+  
+    for sin in self.sinRepetir.ordenarMatriz(archivo):
       for dato in nombres[int(sin)].childNodes:
         if(str(dato).find("dato")!=-1):
           mayork=mayork+dato.attributes["y"].value+","

@@ -3,6 +3,8 @@ from PROCESAR import *
 from ARCA import *
 from COLOCAR import *
 from DATOS import *
+from Nombres import *
+from GRAFICA import *
 
 class Menu:
  
@@ -23,14 +25,15 @@ class Menu:
         CargarDatos.cargar(documento)
         print("SE HA CARGADO EL ARCHIVO CON EXITO")
       elif (casteoNumero == 2 ):
-        
+        print("REALIZANDO LA MATRIZ BINARIA...........")
+        print("REALIZANDO SUMA DE DUPLAS...........")
         Colocar().ordenarMatriz(CargarDatos.cargar(documento))
         m.ordenar(CargarDatos.cargar(documento))
        
       elif(casteoNumero == 3):
         print("INGRESA LA DIRECCION DEL ARCHIVO DE SALIDA ")
         salidaS = input()
-        Arca().salida(CargarDatos.cargar(documento),salidaS)
+        archivo().final(CargarDatos.cargar(documento),salidaS)
 
       elif (casteoNumero == 4):
         
@@ -40,7 +43,13 @@ class Menu:
         print("INGENIERIA EN CIENCIAS Y SISTEMAS")
         print("4TO SEMESTRE")
       elif casteoNumero == 5 :
-        print("D")
+        Nombre().ordenarMatriz(CargarDatos.cargar(documento))
+        Nombre().nombres()
+        print("COLOQUE EL NUMERO DE LA MATRIZ QUE DESEA GRAFICAR")
+        grafica = input()
+        graf().graficas(CargarDatos.cargar(documento),grafica)
+        graf().graficarMatriz()
+
       elif casteoNumero == 6 :
         break
 
