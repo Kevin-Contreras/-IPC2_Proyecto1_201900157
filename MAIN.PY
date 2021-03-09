@@ -47,8 +47,10 @@ class Menu:
         Nombre().nombres()
         print("COLOQUE EL NUMERO DE LA MATRIZ QUE DESEA GRAFICAR")
         grafica = input()
+        print("INGRESE LA RUTA DE SALIDA")
+        ar = input()
         graf().graficas(CargarDatos.cargar(documento),grafica)
-        graf().graficarMatriz()
+        graf().graficarMatriz(ar)
 
       elif casteoNumero == 6 :
         break

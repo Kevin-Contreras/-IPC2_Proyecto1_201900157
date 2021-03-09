@@ -14,7 +14,7 @@ class graf():
     for matriz in matrices[int(indice)-1].childNodes:
       if(str(matriz).find("dato")!=-1):
         self.listaCircular.insertar(matriz.firstChild.nodeValue)
-  def graficarMatriz(self):
+  def graficarMatriz(self,final):
     dot = Digraph(comment='MATRIZ')
     dot.format='png'
     dot.node("M","Matrices",)
@@ -36,7 +36,7 @@ class graf():
     self.dimensiones.eliminar()
     self.dimensiones.eliminar()
     self.listaNombre.eliminar()
-    dot.render('C:/Users/kevin/Desktop/PROYECTO/PROYECTO/grafica')
+    dot.render(final)
 
 
   
